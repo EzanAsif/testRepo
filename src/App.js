@@ -3,16 +3,20 @@ import logo from "./logo.svg";
 import "./App.css";
 import Test from "./Test";
 import data, { signalsData } from "./links";
+import { signalsDataTest } from "./testFile";
 function App() {
   const [state, setState] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      let data = await signalsData;
-      setState(data);
-      console.log(state);
-    })();
-  }, [state]);
+  let dummy = [];
+  // useEffect(() => {
+  (async () => {
+    let data = await signalsDataTest;
+    setState(data);
+    dummy = data;
+    console.log(state);
+  })();
+  // }, [state]);
+  console.log("this is dummy");
+  console.log(dummy);
   return (
     <div className="App">
       <br />
